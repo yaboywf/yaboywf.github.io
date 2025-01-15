@@ -140,26 +140,30 @@ main>section:nth-of-type(2)>div>div:nth-of-type(8)>div {
 }
 
 main>section:nth-of-type(2)>div>div:nth-of-type(10)>div {
-    background: url(images/figma.webp) center/contain no-repeat
+    background: url(images/pygame.webp) center/contain no-repeat
 }
 
 main>section:nth-of-type(2)>div>div:nth-of-type(11)>div {
-    background: url(images/knime.webp) center/contain no-repeat
+    background: url(images/figma.webp) center/contain no-repeat
 }
 
 main>section:nth-of-type(2)>div>div:nth-of-type(12)>div {
-    background: url(images/vscode.webp) center/contain no-repeat
+    background: url(images/knime.webp) center/contain no-repeat
 }
 
 main>section:nth-of-type(2)>div>div:nth-of-type(13)>div {
-    background: url(images/ppt.webp) center/contain no-repeat
+    background: url(images/vscode.webp) center/contain no-repeat
 }
 
 main>section:nth-of-type(2)>div>div:nth-of-type(14)>div {
-    background: url(images/words.webp) center/contain no-repeat
+    background: url(images/ppt.webp) center/contain no-repeat
 }
 
 main>section:nth-of-type(2)>div>div:nth-of-type(15)>div {
+    background: url(images/words.webp) center/contain no-repeat
+}
+
+main>section:nth-of-type(2)>div>div:nth-of-type(16)>div {
     background: url(images/excel.webp) center/contain no-repeat
 }
 
