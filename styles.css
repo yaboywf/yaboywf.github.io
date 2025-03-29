@@ -121,23 +121,27 @@ main > section:nth-of-type(2) > div > div:nth-of-type(3) > div {
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(4) > div {
-  background: url(images/js.webp) center/contain no-repeat;
+  background: url(images/scss.png) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(5) > div {
-  background: url(images/express.webp) center/contain no-repeat;
+  background: url(images/js.webp) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(6) > div {
-  background: url(images/flask.webp) center/contain no-repeat;
+  background: url(images/express.webp) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(7) > div {
-  background: url(images/react.webp) center/contain no-repeat;
+  background: url(images/flask.webp) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(8) > div {
-  background: url(images/mysql.webp) center/contain no-repeat;
+  background: url(images/react.webp) center/contain no-repeat;
+}
+
+main > section:nth-of-type(2) > div > div:nth-of-type(9) > div {
+  background: url(images/cpp.webp) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(10) > div {
@@ -145,27 +149,31 @@ main > section:nth-of-type(2) > div > div:nth-of-type(10) > div {
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(11) > div {
-  background: url(images/figma.webp) center/contain no-repeat;
+  background: url(images/mysql.webp) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(12) > div {
-  background: url(images/knime.webp) center/contain no-repeat;
+  background: url(images/sqlite.png) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(13) > div {
-  background: url(images/vscode.webp) center/contain no-repeat;
+  background: url(images/firebird.png) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(14) > div {
-  background: url(images/ppt.webp) center/contain no-repeat;
+  background: url(images/dart.png) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(15) > div {
-  background: url(images/words.webp) center/contain no-repeat;
+  background: url(images/flutter.webp) center/contain no-repeat;
 }
 
 main > section:nth-of-type(2) > div > div:nth-of-type(16) > div {
-  background: url(images/excel.webp) center/contain no-repeat;
+  background: url(images/figma.webp) center/contain no-repeat;
+}
+
+main > section:nth-of-type(2) > div > div:nth-of-type(17) > div {
+  background: url(images/knime.webp) center/contain no-repeat;
 }
 
 .education {
@@ -523,7 +531,6 @@ main > section:nth-of-type(2) > div > div:first-of-type > div,
   background: url(images/python.webp) center/contain no-repeat;
 }
 
-main > section:nth-of-type(2) > div > div:nth-of-type(9) > div,
 .project:nth-of-type(10) {
   background: url(images/cpp.webp) center/contain no-repeat;
 }
