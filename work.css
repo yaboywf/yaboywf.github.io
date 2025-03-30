@@ -1,0 +1,58 @@
+.work_experience {
+    display: flex;
+    padding: 20px 150px;
+    align-items: start !important;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    justify-content: start !important;
+    background: #f6f6f6 !important;
+    margin: auto;
+}
+
+.work_experience>div {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: start !important;
+    align-items: start !important;
+    gap: 20px !important;
+}
+
+.work_experience>div>div {
+    width: calc((100% - 20px) / 2);
+    border: 1px solid #000;
+    display: grid !important;
+    grid-template-columns: min-content 1fr;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 10px !important;
+    min-height: 200px;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.work_experience>div>div p:nth-of-type(odd) {
+    grid-column: 1;
+    white-space: nowrap;
+}
+
+.work_experience>div>div p:nth-of-type(even) {
+    grid-column: 2;
+}
+
+.work_experience>div>div h3 {
+    grid-column: span 2;
+    text-align: left;
+    display: flex;
+    font-size: 1em;
+    align-items: center;
+}
+
+.work_experience>div>div h3::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background: var(--bg) center/contain no-repeat;
+}
