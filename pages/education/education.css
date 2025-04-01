@@ -1,0 +1,82 @@
+.education {
+	margin: 20px 0;
+	display: flex;
+	flex-direction: column;
+	padding: 0 150px;
+    gap: 20px;
+}
+
+.education > div {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: max-content 1fr;
+    width: 100%;
+    align-items: center;
+}
+
+.education > div > div:nth-child(2n+1) > p {
+	width: 50px;
+	height: 50px;
+	background: #000;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+    z-index: 2;
+}
+
+.education > div > div:nth-child(2n+1) {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.education span {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    background: #000;
+    z-index: 1;
+    flex: 1;
+    height: 100%;
+}
+
+.info_box {
+    margin: 10px 0;
+	border: 1px solid #000;
+	border-radius: 10px;
+	padding: 20px;
+    line-height: 1.5;
+}
+
+.info_box > div:first-of-type {
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.info_box > div:first-of-type::before {
+    content: "";
+	width: 30px;
+	height: 30px;
+	display: flex;
+	margin-right: 10px;
+}
+
+.info_box ul {
+    margin-left: 20px;
+}
+
+.gm::before {
+	background: url(/assets/images/gm.webp) center/contain no-repeat;
+}
+
+.tp::before {
+	background: url(/assets/images/tp.webp) center/contain no-repeat;
+}

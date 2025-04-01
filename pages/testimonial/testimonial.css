@@ -1,0 +1,6 @@
+.testimonial {
+	padding: 0 150px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
