@@ -22,3 +22,5 @@ I have a strong passion for coding and aspire to build a career in the IT field.
 17. KNIME
 
 <b>Learn more about me by visting my website</b>
+
+<footer>Last updated: 1/4/2025</footer>
