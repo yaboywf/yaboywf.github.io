@@ -45,11 +45,13 @@ const volunteerExperience = document.getElementById("volunteer_experience");
 const volunteerExperienceObject = {
     "The Boys' Brigade 21st Singapore Company": "2 Months",
     "Singapore Computer Society": "1 Day",
+    "NTUC Active Againg Centre (Whampoa)": "1 Day",
+    "People's Association": "1 Day"
 }
 
 if (volunteerExperience) {
     const volunteerExperienceContent = Object.entries(volunteerExperienceObject).map(([key, value]) => {
-        const volunteerLogo = key.split(" ")[0].toLowerCase();
+        const volunteerLogo = key.split(" ")[0].toLowerCase().replaceAll("'", "");
         return `
             <div>
                 <h3 style="--bg: url(assets/images/volunteer/${volunteerLogo}.webp)">${key}</h3>
