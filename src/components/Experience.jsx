@@ -11,7 +11,7 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <header>
+            <header className="header">
                 <h1>My Experience</h1>
             </header>
 
