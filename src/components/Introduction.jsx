@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/intro.scss";
 
 const Introduction = () => {
@@ -13,9 +12,7 @@ const Introduction = () => {
                 </div>
             </div>
 
-            <a href="CV.pdf" download="Resume.pdf">
-                <button>Download Resume</button>
-            </a>
+            <a href="CV.pdf" download="Resume.pdf">Download Resume</a>
         </section>
     );
 };
