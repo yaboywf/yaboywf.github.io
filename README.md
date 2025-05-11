@@ -21,7 +21,7 @@ I have a strong passion for coding and aspire to build a career in the IT field.
 16. Figma
 17. KNIME
 
-<b>Learn more about me by visting my website</b>
+<b>Learn more about me by visiting my website</b>
 
 # Last Updated
 Last updated: 11/5/2025
