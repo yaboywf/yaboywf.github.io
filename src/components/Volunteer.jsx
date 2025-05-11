@@ -3,9 +3,9 @@ import "../styles/techstack.scss";
 const Volunteer = () => {
     const volunteerExperienceObject = {
         "The Boys' Brigade 21st Singapore Company": "2 Months",
-        "Singapore Computer Society": "1 Day",
+        "Singapore Computer Society": "3 Days",
         "NTUC Active Ageing Centre": "1 Day",
-        "People's Association": "1 Day"
+        "People's Association": "2 Days"
     };
 
     return (

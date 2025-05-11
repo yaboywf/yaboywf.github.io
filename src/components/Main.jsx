@@ -8,7 +8,7 @@ import "../styles/general.scss";
 
 const Main = () => {
     return (
-        <div>
+        <main>
             <Header></Header>
 
             <Introduction></Introduction>
@@ -17,7 +17,7 @@ const Main = () => {
             <Testimony></Testimony>
 
             <Footer></Footer>
-        </div>
+        </main>
     );
 };
 

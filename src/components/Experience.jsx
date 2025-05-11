@@ -8,9 +8,9 @@ import "../styles/work.scss";
 
 const Main = () => {
     return (
-        <div>
+        <main className="works">
             <Header></Header>
-            <header className="header">
+            <header>
                 <h1>My Experience</h1>
             </header>
 
@@ -19,7 +19,7 @@ const Main = () => {
             <Projects></Projects>
 
             <Footer></Footer>
-        </div>
+        </main>
     );
 };
 
