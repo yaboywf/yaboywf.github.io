@@ -13,7 +13,7 @@ const Work = () => {
                     const workLogo = key.split(" ")[0].toLowerCase();
                     return (
                         <div key={workLogo}>
-                            <h3 style={{ '--bg': `url(images/${workLogo}.webp)` }}>{key}</h3>
+                            <h3 style={{ '--bg': `url(/images/${workLogo}.webp)` }}>{key}</h3>
                             <p>Job Scope</p>
                             <p>{value[0]}</p>
                             <p>Job Type</p>
