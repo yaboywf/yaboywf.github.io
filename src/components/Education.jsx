@@ -19,6 +19,8 @@ const Education = () => {
                         <ul>
                             <li>Member of Temasek LEADership Programme</li>
                             <li>Member of Informatics & IT Studies Club</li>
+                            <li>Member of National Youth Achievement Award Student Interest Group (NYAASIG)</li>
+                            <li>Student Representative for Singapore Computer Society</li>
                         </ul>
                         <p>Academic Achievements:</p>
                         <ul>
