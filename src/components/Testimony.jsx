@@ -20,7 +20,7 @@ const Testimony = () => {
             </article>
 
             <br />
-            <h2>Write-up from PolyTechnic</h2>
+            <h2>Testimonial from Polytechnic</h2>
 
             <article>
                 Dylan is academically and technically astute. He has attained outstanding results in his first year at TP, earning him a place in the Director’s List which is reserved for the top 10% of students. He attained a cumulative grade point average of 4.0 (out of a mx of 4 points) and achieved Distinctions in the following subjects: Cybersecurity Fundamentals, Network and Cloud Technology, Database Application Development, Application Development Project.
