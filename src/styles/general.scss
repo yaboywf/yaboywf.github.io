@@ -72,18 +72,19 @@ main h1,
 	.techstack,
 	.work_experience,
 	.projects,
+	.certs,
 	footer {
 		padding: 0 100px !important;
 	}
 }
 
 @media screen and (max-width: 1000px) {
-
 	.education,
 	.testimonial,
 	.techstack,
 	.work_experience,
 	.projects,
+	.certs
 	footer {
 		padding: 0 80px !important;
 	}
@@ -95,6 +96,7 @@ main h1,
 	.techstack,
 	.work_experience,
 	.projects,
+	.certs,
 	footer {
 		padding: 0 40px !important;
 	}
@@ -180,12 +182,12 @@ main h1,
 }
 
 @media screen and (max-width: 300px) {
-
 	.education,
 	.testimonial,
 	.techstack,
 	.work_experience,
 	.projects,
+	.certs,
 	footer {
 		padding: 0 20px !important;
 	}
