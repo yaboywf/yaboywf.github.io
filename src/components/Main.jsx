@@ -4,6 +4,7 @@ import Testimony from "./Testimony";
 import Footer from "./Footer";
 import Introduction from "./Introduction";
 import Techstack from "./Techstack";
+import Certs from "./Certs";
 import "../styles/general.scss";
 
 const Main = () => {
@@ -14,6 +15,7 @@ const Main = () => {
             <Introduction></Introduction>
             <Techstack></Techstack>
             <Education></Education>
+            <Certs></Certs>
             <Testimony></Testimony>
 
             <Footer></Footer>
