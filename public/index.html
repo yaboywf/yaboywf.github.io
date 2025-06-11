@@ -3,12 +3,13 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="theme-color" content="#000000" />
-	<meta name="description" content="Dylan Yeo's Portfolio" />
 	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 	<link rel="stylesheet" href="%PUBLIC_URL%/icons.css" />
 	<link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png">
+	<link rel="preload" href="/images/pfp.webp" as="image" fetchpriority="high">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#000000" />
+	<meta name="description" content="Dylan Yeo's Portfolio" />
 	<title>My Portfolio</title>
 	<meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="
@@ -16,7 +17,7 @@
 		script-src 'self' 'unsafe-inline';
 		style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/;
 		img-src 'self';
-		connect-src 'self';
+		connect-src 'self' https://api.emailjs.com/api/v1.0/email/send;
 		frame-src 'self';
         font-src 'self' https://cdnjs.cloudflare.com/;
 		object-src 'self';
