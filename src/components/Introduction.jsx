@@ -12,7 +12,7 @@ const Introduction = () => {
                 </div>
             </div>
 
-            <a href="CV.pdf" download="CV.pdf">Download Resume</a>
+            <a href="Dylan Resume.pdf" download="Dylan Resume.pdf">Download Resume</a>
         </section>
     );
 };
