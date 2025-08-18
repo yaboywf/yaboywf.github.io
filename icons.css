@@ -1,6 +1,7 @@
 :host, :root {
     --fa-style-family-brands: "Font Awesome 6 Brands";
-    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands"
+    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Pro";
 }
 
 @font-face {
@@ -9,10 +10,18 @@
     font-display: swap;
     font-weight: 400;
     font-display: block;
-    src: url(fa-brands-400.woff2) format("woff2"), url(fa-brands-400.ttf) format("truetype");
+    src: url(fa-brands-400.woff2) format("woff2");
 }
 
-.fab {
+@font-face {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url(fa-solid-900.woff2) format("woff2");
+}
+
+.fab,.fas {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: var(--fa-display, inline-block);
@@ -20,8 +29,20 @@
     font-variant: normal;
     line-height: 1;
     text-rendering: auto;
+}
+
+.fab {
+    font-weight: 400;
     font-family: "Font Awesome 6 Brands";
-    font-weight: 400
+}
+
+.fas {
+    font-weight: 900;
+    font-family: "Font Awesome 6 Pro";
+}
+
+.fas:before {
+    content: var(--fa);
 }
 
 .fab:before { content: var(--fa) }
@@ -29,3 +50,5 @@
 .fa-facebook { --fa: "\f09a" }
 .fa-linkedin-in { --fa: "\f0e1" }
 .fa-github { --fa: "\f09b" }
+.fa-chevron-left { --fa: "\f053" }
+.fa-chevron-right { --fa: "\f054" }
