@@ -1,2 +1,0 @@
-.loading{align-items:center;display:flex;flex-direction:column;gap:20px;justify-content:center;margin-top:30px}.loading p{font-size:20px;font-weight:700}.loading div{animation:spin 1s linear infinite;border-left:5px solid #000!important;border:5px solid #0000;border-radius:50%;height:100px;width:100px}@keyframes spin{to{transform:rotate(1turn)}}
-/*# sourceMappingURL=14.53574366.chunk.css.map*/
