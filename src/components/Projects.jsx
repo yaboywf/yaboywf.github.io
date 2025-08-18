@@ -18,7 +18,7 @@ const projects = {
     },
     "The Boys' Brigade 21st Company Website": {
         "description": "Website for the company that showcases what it does as well as include several administrative features.",
-        "usage": ["React JS", "SCSS", "Ruby on Rails"],
+        "usage": ["React JS", "SCSS", "Vercel Serverless Functions"],
         "image": "bbwebsite.webp"
     },
     "QR Code Generation with Python Turtle module": {
@@ -33,7 +33,7 @@ const projects = {
     },
     "Teach & Tackle": {
         "description": "Frontend design for a website that provides a platform for students mentor each other. Diploma Assignment.",
-        "usage": ["HTML", "CSS", "JavaScript"],
+        "usage": ["HTML", "CSS", "JavaScript", "AWS Cognito", "AWS Lambda", "AWS S3", "AWS DynamoDB", "AWS API Gateway", "AWS SES"],
         "image": "teachtackle.webp"
     },
     "TP VendPoint": {
@@ -66,14 +66,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-// Object.entries(data).forEach(([key, value]) => {
-//     const projectsFormat = `
-// <div class="project" style="--bg: url(/assets/images/projects/${value.image})">
-//     <div>
-//         <h3>${key}</h3>
-//         <p>${value.usage.join(" | ")}</p>
-
-//         <p>${value.description}</p>
-//     </div>
-// </div>`

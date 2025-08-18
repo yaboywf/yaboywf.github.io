@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-	<link rel="stylesheet" href="%PUBLIC_URL%/icons.css" />
-	<link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png">
-	<link rel="preload" href="/images/pfp.webp" as="image" fetchpriority="high">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="theme-color" content="#000000" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Dylan Yeo's Portfolio" />
+	<link rel="icon" href="favicon.ico" />
+	<link rel="manifest" href="manifest.json" />
+	<link rel="stylesheet" href="icons.css" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="preload" href="/images/pfp.webp" as="image" fetchpriority="high">
 	<title>My Portfolio</title>
 	<meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="
+	<meta http-equiv="Content-Security-Policy" content="
 		default-src 'self';
 		script-src 'self' 'unsafe-inline';
 		style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/;
@@ -25,5 +24,6 @@
 </head>
 <body>
 	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

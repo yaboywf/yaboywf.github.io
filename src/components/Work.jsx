@@ -1,8 +1,9 @@
 const Work = () => {
     const workExperienceObject = {
+        "Outdoor Venture Pte Ltd": ["Sports Atrium Packer ", "Part-time", "3 Days"],
         "Eventas Asia LLP": ["Event Facilitator for Team Building Event", "Part-time", "1 Day"],
         "Mercantile Pacific Asia Pte. Ltd.": ["Temporary Phone Handler", "Part-time", "2 Months"],
-        "Singapore Post Ltd.": ["Temporary Phone Handler", "Full-time", "1 Month"]
+        "Singapore Post Ltd.": ["Temporary Phone Handler", "Full-time", "1 Month"],
     };
 
     return (

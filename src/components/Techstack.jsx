@@ -1,7 +1,7 @@
 import "../styles/techstack.scss";
 
 const Techstack = () => {
-    const techstackList = ["HTML", "React JS", "CSS", "SCSS", "JavaScript", "Python", "C++", "Javascript Express", "Python Flask", "Pygame", "MySQL", "SQLite", "Firebird SQL", "PostgreSQL", "Dart", "Flutter", "Figma", "KNIME"];
+    const techstackList = ["HTML", "React JS", "CSS", "SCSS", "JavaScript", "Python", "C++", "Javascript Express", "Python Flask", "Pygame", "MySQL", "SQLite", "Firebird SQL", "PostgreSQL", "Dart", "Flutter"];
 
     return (
         <section className="techstack">

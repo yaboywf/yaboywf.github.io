@@ -1,7 +1,7 @@
 import '../styles/certs.scss'
 
 const Certs = () => {
-    const content = Array.from({ length: 12 }, (_, index) => (index + 1).toString());
+    const content = Array.from({ length: 13 }, (_, index) => (index + 1).toString());
 
     return (
         <section className="certs">
