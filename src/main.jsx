@@ -1,11 +1,11 @@
-import React, { Suspense, StrictMode } from 'react';
+import { Suspense, StrictMode, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
-const Main = React.lazy(() => import('./components/Main'));
-const Experience = React.lazy(() => import('./components/Experience'));
-const Loading = React.lazy(() => import('./components/Loading'));
-const Contact = React.lazy(() => import('./components/Contact'));
+const Main = lazy(() => import('./components/Main'));
+const Experience = lazy(() => import('./components/Experience'));
+const Loading = lazy(() => import('./components/Loading'));
+const Contact = lazy(() => import('./components/Contact'));
 
 createRoot(document.body).render(
 	<StrictMode>

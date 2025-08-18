@@ -4,83 +4,34 @@
     flex-direction: column;
     padding: 0 150px;
     gap: 20px;
-}
 
-.scroll {
-    gap: 20px;
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, #fff 5%, #fff 95%, transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, #fff 5%, #fff 95%, transparent);
-
-    div {
+    .controls {
         display: flex;
+        font-size: 30px;
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+            cursor: pointer;
+        }
+    }
+
+    .certs_list {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
-        white-space: nowrap;
-        animation: scroll var(--time) linear infinite;
-        animation-delay: calc(var(--time)*-1);
-    }
 
-    div:nth-child(2) {
-        animation: scroll2 var(--time) linear infinite;
-        animation-delay: calc(var(--time)/-2);
-        margin-right: 20px;
-    }
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes scroll2 {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-200%);
-    }
-}
-
-.scroll div img {
-    height: 400px;
-}
-
-@media screen and (max-width: 800px) {
-    .scroll img {
-        height: 300px !important;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .scroll img {
-        height: 200px !important;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .scroll {
-        mask-image: none !important;
-        flex-direction: column !important;
-        -webkit-mask-image: none !important;
-
-        div {
-            flex-direction: column !important;
-            animation: none !important;
-            margin: 0 !important;
-        }
-
-        img {
-            width: 100% !important;
-            height: auto !important;
-            object-fit: contain !important;
+        input {
+            cursor: pointer;
+            transform: scale(1.2);
+            accent-color: #000;
         }
     }
+}
+
+.cert_photo {
+    width: 100%;
+    min-height: 450px;
 }
