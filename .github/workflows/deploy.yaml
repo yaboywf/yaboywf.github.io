@@ -26,13 +26,6 @@ jobs:
       run: |
         npm run build
 
-    - name: List files in the `dist` folder (for debugging)
-      run: |
-        ls -la dist  # This will list the contents of the dist folder to verify it exists
-
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: dist
-        token: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        npm run deploy
