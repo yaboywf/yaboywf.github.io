@@ -7,28 +7,32 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # The environment in which the job will run
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2  # Checks out the code from the repository
+      uses: actions/checkout@v2
     
-    - name: Set up Node.js (if using a build system like React, Angular, etc.)
+    - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'  # Specify the Node.js version (if applicable)
+        node-version: '16'
 
-    - name: Install dependencies (if applicable)
+    - name: Install dependencies
       run: |
-        npm install  # This assumes you're using npm to install dependencies
+        npm install
 
     - name: Build project (if applicable)
       run: |
-        npm run build  # Modify this according to your build script (e.g., `npm run build`, `gatsby build`, etc.)
+        npm run build
+
+    - name: List files in the `dist` folder (for debugging)
+      run: |
+        ls -la dist  # This will list the contents of the dist folder to verify it exists
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: gh-pages  # The branch you want to deploy to
-        folder: dist  # The folder where your build output lives (e.g., `dist`, `build`, `docs`, etc.)
-        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub provides this automatically for authentication
+        branch: gh-pages
+        folder: dist
+        token: ${{ secrets.GITHUB_TOKEN }}
