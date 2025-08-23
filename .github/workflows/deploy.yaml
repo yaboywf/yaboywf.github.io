@@ -26,13 +26,9 @@ jobs:
       run: |
         npm run build
 
-    - name: Configure Git identity
-      run: |
-        git config --global user.email "${{ secrets.GITHUB_ACTOR }}@users.noreply.github.com"
-        git config --global user.name "${{ secrets.GITHUB_ACTOR }}"
-
     - name: Deploy to GitHub Pages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Make sure to pass the token here for authentication
-      run: |
-        npm run deploy  # This will deploy using the deploy script in package.json
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages  # The branch you want to deploy to (GitHub Pages default branch)
+        folder: dist  # The folder where Vite places the build output
+        token: ${{ secrets.GITHUB_TOKEN }}
