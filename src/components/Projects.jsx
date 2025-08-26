@@ -43,7 +43,8 @@ const projects = {
     "TP VendPoint": {
         "description": "Website that allows administrators to manage vending machines. Diploma Assignment.",
         "usage": ["HTML", "CSS", "JavaScript", "Express JS", "MySQL"],
-        "image": "vendpoint.webp"
+        "image": "vendpoint.webp",
+        "link": "https://github.com/yaboywf/TP-Vendpoint"
     }
 }
 
