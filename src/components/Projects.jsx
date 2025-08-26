@@ -19,22 +19,26 @@ const projects = {
     "The Boys' Brigade 21st Company Website": {
         "description": "Website for the company that showcases what it does as well as include several administrative features.",
         "usage": ["React JS", "SCSS", "Vercel Serverless Functions"],
-        "image": "bbwebsite.webp"
+        "image": "bbwebsite.webp",
+        "link": "https://bb-21-5a1d0159cf81.herokuapp.com"
     },
-    "QR Code Generation with Python Turtle module": {
-        "description": "Generate QR codes using Python Turtle module. The current QR Code leads to the Wikipedia page of Singapore.",
-        "usage": ["Python"],
-        "image": "qrcode.webp"
+    "Multiplayer Rock Paper Scissors with Socket.io": {
+        "description": "Multiplayer game that allows users to play against each other. Uses Socket.io for real-time communication.",
+        "usage": ["React JS", "SCSS", "NodeJS (Socket.io)"],
+        "image": "rps.webp",
+        "link": "https://github.com/yaboywf/multiplayer-rock-paper-scissors"
     },
     "Attendance System": {
         "description": "Website that aims to simplify an attendance process. Includes features such as self marking, form submission, etc.",
         "usage": ["React JS", "SCSS", "Express JS", "Python", "Firebird SQL"],
-        "image": "attendance.webp"
+        "image": "attendance.webp",
+        "link": "https://github.com/yaboywf/attendance-system"
     },
     "Teach & Tackle": {
         "description": "Frontend design for a website that provides a platform for students mentor each other. Diploma Assignment.",
         "usage": ["HTML", "CSS", "JavaScript", "AWS Cognito", "AWS Lambda", "AWS S3", "AWS DynamoDB", "AWS API Gateway", "AWS SES"],
-        "image": "teachtackle.webp"
+        "image": "teachtackle.webp",
+        "link": "https://github.com/yaboywf/teach-and-tackle-v2"
     },
     "TP VendPoint": {
         "description": "Website that allows administrators to manage vending machines. Diploma Assignment.",
@@ -50,8 +54,8 @@ const Projects = () => {
             <div>
                 {Object.entries(projects).map(([key, value]) => {
                     return (
-                        <div className="project" style={{ background: `url(images/${value.image}) center/contain no-repeat` }} key={key}>
-                            <div>
+                        <div className="project" style={{ background: `url(images/${value.image}) center/contain no-repeat` }} key={key} onClick={() => window.open(value.link || "")}>
+                            <div onClick={() => window.open(value.link || "")}>
                                 <h3>{key}</h3>
                                 <p>{value.usage.join(" | ")}</p>
 
