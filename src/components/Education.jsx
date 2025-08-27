@@ -14,7 +14,7 @@ const Education = () => {
                     <div style={{ '--bg': `url('/images/tp.webp')` }} className="education-image">Temasek Polytechnic</div>
 
                     <div>
-                        <p>Duration: 2025 - 2027</p>
+                        <p>Duration: 2024 - 2027</p>
                         <p>Leadership Roles:</p>
                         <ul>
                             <li>Member of Temasek LEADership Programme</li>
@@ -39,7 +39,7 @@ const Education = () => {
                     <div style={{ '--bg': `url('/images/gm.webp')` }} className="education-image">Geylang Methodist School (Secondary)</div>
 
                     <div>
-                        <p>Duration: 2021 - 2024</p>
+                        <p>Duration: 2020 - 2023</p>
                         <p>Leadership Roles:</p>
                         <ul>
                             <li>The Boys' Brigade 21<sup>st</sup> Company's Award Sergeant</li>
@@ -64,7 +64,7 @@ const Education = () => {
                     <div style={{ '--bg': `url('/images/gm.webp')` }} className="education-image">Geylang Methodist School (Primary)</div>
 
                     <div>
-                        <p>Duration: 2014 - 2020</p>
+                        <p>Duration: 2013 - 2019</p>
                         <p>Completion of PSLE</p>
                     </div>
                 </div>
