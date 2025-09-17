@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import emailjs from "emailjs-com";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../styles/general.scss";
@@ -23,7 +22,7 @@ const Contact = () => {
         }
     }, [name, message, touched]);
 
-    function submitForm(e) {
+    async function submitForm(e) {
         e.preventDefault();
         if (!errors.name || !errors.message) {
             setErrors((prevErrors) => ({
@@ -38,21 +37,19 @@ const Contact = () => {
             }));
         }
 
-        const formData = {
-            name: name,
-            feedback: message
-        };
-
-        emailjs.send("service_qskfpcj", "template_21t2lau", formData, "x3W7CWcYMOJJ_XUHF")
-        .then(() => {
-            setStatus("success");
-            setResponse("Your message has been sent!");
-        })
-        .catch(err => {
-            console.error(err);
-            setStatus("error");
-            setResponse("An error occurred while sending your message. Please try again later.");
+        await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                service_id: "service_qskfpcj",
+                template_id: "template_21t2lau",
+                user_id: "x3W7CWcYMOJJ_XUHF",
+                template_params: { name, feedback: message }
+            })
         });
+
+        setStatus("success")
+        setResponse("Your message has been sent!")
     }
 
     return (
