@@ -24,4 +24,4 @@ I have a strong passion for coding and aspire to build a career in the IT field.
 <b>Learn more about me by visiting my website</b>
 
 # Last Updated
-Last updated: 11/5/2025
+Last updated: 24/09/2025
