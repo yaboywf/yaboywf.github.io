@@ -20,7 +20,7 @@ const projects = {
         "description": "Website for the company that showcases what it does as well as include several administrative features.",
         "usage": ["React JS", "SCSS", "Vercel Serverless Functions"],
         "image": "bbwebsite.webp",
-        "link": "https://bb-21-5a1d0159cf81.herokuapp.com"
+        "link": "https://bb21coy.github.io"
     },
     "Multiplayer Rock Paper Scissors with Socket.io": {
         "description": "Multiplayer game that allows users to play against each other. Uses Socket.io for real-time communication.",

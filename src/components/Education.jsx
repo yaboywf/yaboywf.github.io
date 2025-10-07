@@ -25,7 +25,8 @@ const Education = () => {
                         <p>Academic Achievements:</p>
                         <ul>
                             <li>Director's List (AY 2024/2025)</li>
-                            <li>ASTAR Scholarship Recipient (2025)</li>
+                            <li>ASTAR Science Award Recipient (2025)</li>
+                            <li>MOE Edusave Certificate of Academic Achievement (2025)</li>
                         </ul>
                     </div>
                 </div>
