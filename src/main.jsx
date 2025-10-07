@@ -20,3 +20,32 @@ createRoot(document.body).render(
 		</Router>
 	</StrictMode>
 );
+
+let refreshInProgress = false;
+if ("serviceWorker" in navigator) {
+	window.addEventListener("load", () => {
+		navigator.serviceWorker.register("/sw.js").catch(console.error);
+	});
+
+	navigator.serviceWorker.addEventListener("message", async (event) => {
+		if (event.data?.type === "SW_FETCH_FAILED" && !refreshInProgress) {
+			refreshInProgress = true;
+			alert("The site has been updated. Refreshing to get the latest version...");
+
+			const regs = await navigator.serviceWorker.getRegistrations();
+			for (const reg of regs) await reg.unregister();
+
+			if (window.caches) {
+				const keys = await caches.keys();
+				await Promise.all(keys.map((key) => caches.delete(key)));
+			}
+
+			location.reload(true);
+		}
+
+		if (event.data?.type === "SW_UPDATE_AVAILABLE" && !refreshInProgress) {
+			refreshInProgress = true;
+			alert("The site has been updated. Refreshing to get the latest version...");
+		}
+	});
+}
