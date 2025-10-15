@@ -24,10 +24,18 @@
         gap: 20px;
         flex-wrap: wrap;
 
-        input {
+        button {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            outline: none;
+            background-color: transparent;
             cursor: pointer;
-            transform: scale(1.2);
-            accent-color: #000;
+
+            &.active {
+                background-color: #000;
+            }
         }
     }
 }

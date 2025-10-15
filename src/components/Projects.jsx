@@ -1,24 +1,14 @@
 import "../styles/projects.scss";
 
 const projects = {
-    "The ATC Game": {
-        "description": "Users play the role of an air traffic controller, instructing aircrafts to their target altitude speed and waypoint.",
-        "usage": ["Pygame"],
-        "image": "atc.webp"
-    },
     "Ping Pong": {
         "description": "Users play the role of two ping-pong players. The game ends when one of the players scores 10 points.",
         "usage": ["Pygame"],
         "image": "pingpong.webp"
     },
-    "The Great Garbage Cleanup": {
-        "description": "Users are on a ship and tasked to pick up garbage from the sea. Remember to avoid the fishes.",
-        "usage": ["Pygame"],
-        "image": "garbage.webp"
-    },
     "The Boys' Brigade 21st Company Website": {
         "description": "Website for the company that showcases what it does as well as include several administrative features.",
-        "usage": ["React JS", "SCSS", "Vercel Serverless Functions"],
+        "usage": ["React JS", "SCSS", "Vercel Serverless Functions", "Firebase Authentication", "Firebase Firestore"],
         "image": "bbwebsite.webp",
         "link": "https://bb21coy.github.io"
     },
@@ -55,7 +45,7 @@ const Projects = () => {
             <div>
                 {Object.entries(projects).map(([key, value]) => {
                     return (
-                        <div className="project" style={{ background: `url(images/${value.image}) center/contain no-repeat` }} key={key} onClick={() => window.open(value.link || "")}>
+                        <div className="project" style={{ background: `url(images/${value.image}) center/cover no-repeat` }} key={key} onClick={() => window.open(value.link || "")}>
                             <div onClick={() => window.open(value.link || "")}>
                                 <h3>{key}</h3>
                                 <p>{value.usage.join(" | ")}</p>
