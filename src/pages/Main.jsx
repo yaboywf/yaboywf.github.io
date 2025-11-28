@@ -9,11 +9,6 @@ import { useEffect } from "react";
 const Main = () => {
     useEffect(() => {
         document.title = "Dylan Yeo Portfolio | Home";
-
-        if (localStorage.getItem("warn") !== true) {
-            alert("This website is current ly undergoing a major revamp. Some sections may be incomplete or missing. Thank you for your understanding!");
-            localStorage.setItem("warn", true);
-        }
     }, []);
 
     return (

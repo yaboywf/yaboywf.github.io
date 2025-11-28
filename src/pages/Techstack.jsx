@@ -4,7 +4,7 @@ import Threads from "../components/Threads";
 import Typewriter from "../components/TypeWriter";
 
 const Techstack = () => {
-    const text = `T#ech Stack Overview
+    const text = `Tech Stack Overview
 -------------------------------------------------------
 
 [ Web Development ]             [ Backend Development ]
