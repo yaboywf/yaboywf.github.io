@@ -16,7 +16,6 @@ const Certs = () => {
 
     return (
         <section className="certs">
-            <h2>Certificates</h2>
             <div>
                 <div className='controls'>
                     <i className='fas fa-chevron-left' onClick={() => setCertIndex(certIndex === 1 ? num : certIndex - 1)}></i>

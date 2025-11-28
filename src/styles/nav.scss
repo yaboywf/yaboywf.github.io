@@ -1,43 +1,59 @@
-nav {
-	background: #d3d3d3;
-	display: flex;
-	gap: 10px;
-	padding: 10px 30px 0;
-	justify-content: end;
-	flex-wrap: wrap;
-	
-	a {
-		text-decoration: none;
-		color: #000;
+.redirect-container {
+	display: grid;
+	margin: 0 150px;
+	padding: 30px 0;
+	gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+
+	.redirect {
+		padding: 20px;
+		height: 200px;
 		display: flex;
 		flex-direction: column;
-		width: max-content;
-		padding: 5px;
-		font-size: 18px;
-		white-space: nowrap;
+		border-radius: 5px;
+		position: relative;
+		background: black;
+		overflow: hidden;
+		--mouse-x: 50%;
+		--mouse-y: 50%;
+		--spotlight-color: rgba(255, 255, 255, 1);
+		border: 1px solid #000;
+		color: white;
 
-		&::after {
-			border: 1px solid #d3d3d3;
-			content: "";
-			width: 0;
-			margin-top: 3px;
-			transition: all 0.2s ease-out;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+			opacity: 0;
+			transition: opacity 0.5s ease;
+			pointer-events: none;
 		}
 
-		&:hover::after {
-			width: 100%;
-			border-color: #000;
+		&:hover::before,
+		&:focus-within::before {
+			opacity: 0.8;
 		}
 
-		&.active::after {
-			width: 100% !important;
-			border-color: #000;
+		p:first-of-type {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
 		}
-	}
-}
 
-@media screen and (max-width: 350px) {
-	nav {
-		justify-content: center !important;
+		a {
+			text-decoration: none;
+			color: black;
+			margin-top: auto;
+			margin-left: auto;
+			border-radius: 10px;
+			font-size: 14px;
+			background: white;
+			width: max-content;
+			padding: 5px 10px;
+		}
 	}
 }
