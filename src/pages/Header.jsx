@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "../styles/nav.scss";
 
 function Header() {
     const [activeLink, setActiveLink] = useState("/");

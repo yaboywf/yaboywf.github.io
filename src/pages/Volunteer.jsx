@@ -1,6 +1,4 @@
-import "../styles/techstack.scss";
-
-const Volunteer = () => {
+    const Volunteer = () => {
     const volunteerExperienceObject = {
         "The Boys' Brigade 21st Singapore Company": "Feb 2025 to Present",
         "Singapore Computer Society": "5 Events",

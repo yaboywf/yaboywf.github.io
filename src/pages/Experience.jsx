@@ -2,7 +2,6 @@ import Header from "./Header";
 import Work from "./Work";
 import Volunteer from "./Volunteer";
 import Projects from "./Projects";
-import Footer from "./Footer";
 import "../styles/general.scss";
 import "../styles/work.scss";
 
@@ -17,8 +16,6 @@ const Main = () => {
             <Work></Work>
             <Volunteer></Volunteer>
             <Projects></Projects>
-
-            <Footer></Footer>
         </main>
     );
 };

@@ -4,6 +4,10 @@ export default function Typewriter({ text, speed = 10 }) {
     const [displayedText, setDisplayedText] = useState("");
 
     useEffect(() => {
+        setDisplayedText("");
+    }, [text]);
+
+    useEffect(() => {
         let i = 0;
         const interval = setInterval(() => {
             setDisplayedText(prev => prev + text.charAt(i));

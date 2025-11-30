@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: block;
-    src: url(solid.ttf) format("truetype")
+    src: url(/solid.ttf) format("truetype")
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: block;
-    src: url(brands.ttf) format("truetype")
+    src: url(/brands.ttf) format("truetype")
 }
 
 .fab,
@@ -60,3 +60,4 @@
 .fa-github { --fa: "\f09b" }
 .fa-chevron-left { --fa: "\f053" }
 .fa-chevron-right { --fa: "\f054" }
+.fa-party-horn { --fa: "\e31b" }
