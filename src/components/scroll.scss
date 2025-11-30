@@ -89,6 +89,12 @@
     border-radius: 5px;
 }
 
+@media screen and (max-width: 800px) {
+    .carousel-track {
+        touch-action: pan-y pinch-zoom;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .carousel-item-title {
         font-size: 14px;
