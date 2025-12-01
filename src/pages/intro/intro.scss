@@ -166,10 +166,17 @@ h1 {
 		flex-direction: column;
 		height: unset;
 		width: 100%;
+		text-align: center;
 		padding: 5% !important;
 
 		p {
 			width: 100% !important;
+			margin: 0 !important;
+			border: none !important;
+		}
+
+		h1 {
+			font-size: 50px;
 		}
 	}
 }

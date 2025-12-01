@@ -47,3 +47,34 @@
         align-items: center;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .experience {
+        .header p {
+            font-size: 40px !important;
+            justify-content: center !important;
+        }
+
+        .work {
+            padding: 30px 20px;
+
+            h3 {
+                font-size: 16px !important;
+            }
+
+            p {
+                font-size: 12px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .work {
+        grid-template-areas:
+            "header1"
+            "content1"
+            "header2"
+            "content2" !important;
+    }
+}

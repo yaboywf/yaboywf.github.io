@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform } from 'motion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './stack.scss';
 
 function CardRotate({ children, onSendToBack, sensitivity }) {
@@ -34,11 +34,28 @@ function CardRotate({ children, onSendToBack, sensitivity }) {
 
 export default function Stack({
     sensitivity = 10,
-    cardDimensions = { width: 300, height: 300 },
     cardsData = [],
     ...rest
 }) {
     const [cards, setCards] = useState(cardsData);
+    const [cardDimensions, setCardDimensions] = useState(() =>
+        window.innerWidth < 800
+            ? { width: 210, height: 210 }
+            : { width: 300, height: 300 }
+    );
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 800) {
+                setCardDimensions({ width: 210, height: 210 });
+            } else {
+                setCardDimensions({ width: 300, height: 300 });
+            }
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const sendToBack = id => {
         setCards(prev => {

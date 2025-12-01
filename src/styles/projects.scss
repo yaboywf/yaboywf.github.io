@@ -6,7 +6,7 @@
 
 	> div {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 20px;
 	}
 }
@@ -48,5 +48,18 @@
 
 	p {
 		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.projects {
+		padding: 0 20px !important;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.projects > div {
+		grid-template-columns: 1fr !important;
 	}
 }
