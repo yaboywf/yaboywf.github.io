@@ -1,4 +1,4 @@
-import{A as j,y as N,b as G,v as W,w as X,f as Y,M as k,u as J}from"./vendor-C08PF8Mu.js";const K=["#ffffff","#ffffff","#ffffff"],Q=t=>{t=t.replace(/^#/,""),t.length===3&&(t=t.split("").map(s=>s+s).join(""));const i=parseInt(t,16),u=(i>>16&255)/255,l=(i>>8&255)/255,r=(i&255)/255;return[u,l,r]},U=`
+import{A as j,y as N,b as G,v as W,w as X,f as Y,M as k,u as J}from"./vendor-BUX3Son7.js";const K=["#ffffff","#ffffff","#ffffff"],Q=t=>{t=t.replace(/^#/,""),t.length===3&&(t=t.split("").map(s=>s+s).join(""));const i=parseInt(t,16),u=(i>>16&255)/255,l=(i>>8&255)/255,r=(i&255)/255;return[u,l,r]},U=`
   attribute vec3 position;
   attribute vec4 random;
   attribute vec3 color;
