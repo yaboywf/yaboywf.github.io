@@ -110,7 +110,7 @@ export default function Carousel({ items, baseWidth = 300, ...rest }) {
                             onClick={() => baseWidth < 300 && window.open(item.link, '_blank')}
                         >
                             <div className='carousel-item-header'>
-                                <img src={`/images/${item.image}`} className="carousel-icon-container" />
+                                <img src={`/images/certs/${item.image}`} className="carousel-icon-container" />
                             </div>
                             <div className="carousel-item-content">
                                 <div className="carousel-item-title">{item.title}</div>

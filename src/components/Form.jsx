@@ -12,11 +12,18 @@ export default function Stepper({
     ...rest
 }) {
     const [direction, setDirection] = useState(0);
+    const [pageSize, setPageSize] = useState(window.innerWidth);
     const stepsArray = Children.toArray(children);
     const totalSteps = stepsArray.length;
     const isCompleted = currentStep > totalSteps;
     const isLastStep = currentStep === totalSteps;
     const navigate = useNavigate();
+
+    useLayoutEffect(() => {
+        const handleResize = () => setPageSize(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const updateStep = newStep => {
         if (newStep > totalSteps) {
@@ -27,7 +34,6 @@ export default function Stepper({
     };
 
     const handleNext = async () => {
-        console.log(currentStep)
         if (!isLastStep && await checkRequirements(currentStep)) {
             setDirection(1);
             updateStep(currentStep + 1);

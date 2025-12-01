@@ -119,3 +119,10 @@
     margin-top: 10px;
     font-size: 30px;
 }
+
+@media screen and (max-width: 500px) {
+    .footer-nav.spread {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+}

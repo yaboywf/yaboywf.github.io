@@ -21,16 +21,26 @@
         gap: 10px;
         justify-content: center;
         margin: 20px 0;
+        flex-wrap: wrap;
+        width: 100%;
 
         button {
             border: 1px solid transparent;
-            transition: all 0.2s ease-in-out;
-        }
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
 
-        button:hover {
-            border: 1px solid #fff;
-            background: transparent;
-            color: white;
+            svg, i {
+                width: 20px;
+                height: 20px;
+                font-size: 20px;
+            }
+
+            &:hover {
+                background: linear-gradient(to bottom right, rgb(81, 46, 222) 15%, rgb(101, 74, 209) 50%, rgb(81, 46, 222) 85%);
+                color: white;
+            }
         }
     }
 
@@ -65,7 +75,7 @@
         left: 50%;
         transform: translateX(-50%);
         transition: all 350ms;
-        color: #a3a3a3;
+        color: grey;
         width: max-content;
         text-align: center;
         margin-bottom: 20px;
@@ -130,6 +140,18 @@
 	.error-container {
 		width: 90vw;
 	}
+
+    .contact {
+        .stepper {
+            width: 90vw;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .loginButtons button {
+        width: 100%;
+    }
 }
 
 @keyframes errorAnimation {

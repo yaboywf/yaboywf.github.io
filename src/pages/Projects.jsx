@@ -45,7 +45,7 @@ const Projects = () => {
             <div>
                 {Object.entries(projects).map(([key, value]) => {
                     return (
-                        <div className="project" style={{ background: `url(images/${value.image}) center/cover no-repeat` }} key={key} onClick={() => window.open(value.link || "")}>
+                        <div className="project" style={{ background: `url(images/projects/${value.image}) center/cover no-repeat` }} key={key} onClick={() => window.open(value.link || "")}>
                             <div onClick={() => window.open(value.link || "")}>
                                 <h3>{key}</h3>
                                 <p>{value.usage.join(" | ")}</p>
