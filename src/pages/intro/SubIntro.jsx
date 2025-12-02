@@ -1,9 +1,36 @@
 import "./intro.scss";
 import Card from "../../components/Card.jsx";
+import { useState, useEffect } from "react";
+import axios from "redaxios";
 
 const SubIntro = () => {
+    const [images, setImages] = useState({ github: null, linkedin: null, instagram: null });
+
+    useEffect(() => {
+        const getImages = async () => {
+            try {
+                const github = await axios.get("https://api.microlink.io/?url=https://github.com/yaboywf")
+                const linkedin = await axios.get("https://api.microlink.io/?url=https://linkedin.com")
+                const instagram = await axios.get("https://api.microlink.io/?url=https://instagram.com")
+                console.log(github)
+                setImages({ github: github.data.data.image.url, linkedin: linkedin.data.data.image.url, instagram: instagram.data.data.image.url });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        getImages();
+    }, []);
+
     return (
         <div className="subintro-container">
+            {Object.keys(images).map((key) => {
+                return (
+                    <div className="image-container" key={key}>
+                        <img src={images[key]} alt={key} />
+                    </div>
+                );
+            })}
             <Card title={"Education"}>
                 <div className="education-container">
                     <img src="/images/tp.webp" alt="Temasek Polytechnic Logo" />
