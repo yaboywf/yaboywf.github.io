@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import "../styles/projects.scss";
+import "./projects.scss";
 
 const projects = [
     { title: "Ping Pong", description: "Users play the role of two ping-pong players. The game ends when one of the players scores 10 points.", usage: ["Pygame"], image: "pingpong.webp" },

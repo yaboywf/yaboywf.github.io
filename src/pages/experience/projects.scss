@@ -11,43 +11,6 @@
 	}
 }
 
-@media screen and (max-width: 800px) {
-	.projects {
-		padding: 0 20px !important;
-		margin-top: 20px;
-	}
-
-	.morphing-card.open {
-		flex-direction: column;
-
-		> div:last-of-type {
-			height: 100%;
-			width: 100%;
-		}
-
-		> div:first-of-type {
-			width: 100%;
-			height: max-content;
-		}
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.grid {
-		grid-template-columns: 1fr !important;
-		grid-auto-rows: 70px
-	}
-
-	.project-grid {
-		padding: 15px !important;
-		grid-area: unset !important;
-
-		p {
-			font-size: 20px !important;
-		}
-	}
-}
-
 .grid {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
@@ -172,6 +135,7 @@
 }
 
 .morphing-card.open {
+	overflow: auto;
 	top: 50% !important;
 	left: 50% !important;
 	translate: -50% -50%;
@@ -180,5 +144,43 @@
 
 	& * {
 		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.projects {
+		padding: 0 20px !important;
+		margin-top: 20px;
+	}
+
+	.morphing-card.open {
+		flex-direction: column;
+
+		> div:last-of-type {
+			height: 100%;
+			width: 100%;
+			align-items: start;
+		}
+
+		> div:first-of-type {
+			width: 100%;
+			height: max-content;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.grid {
+		grid-template-columns: 1fr !important;
+		grid-auto-rows: 70px
+	}
+
+	.project-grid {
+		padding: 15px !important;
+		grid-area: unset !important;
+
+		p {
+			font-size: 20px !important;
+		}
 	}
 }

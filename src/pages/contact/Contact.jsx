@@ -22,7 +22,7 @@ const Contact = () => {
             } else setStep(1);
         });
 
-        document.title = "Dylan Yeo Portfolio | Contact Me";
+        document.title = "Dylan Yeo | Contact Me";
     }, []);
 
     const signInWithGoogle = async () => {

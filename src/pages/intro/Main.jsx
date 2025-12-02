@@ -11,7 +11,7 @@ const Main = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        document.title = "Dylan Yeo Portfolio | Home";
+        document.title = "Dylan Yeo | Home";
     }, []);
 
     return (

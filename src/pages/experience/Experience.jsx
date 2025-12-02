@@ -1,10 +1,11 @@
 import Stack from "../../components/Stack";
-import Projects from "../Projects";
+import Projects from "./Projects";
 import Particles from "../../components/Particles";
 import BlurText from "../../components/TextEffect";
 import "../../styles/general.scss";
 import styles from './experience.module.scss'
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Main = () => {
     const navigate = useNavigate();
@@ -19,6 +20,10 @@ const Main = () => {
         { id: 2, img: '/images/experience/scs.webp', title: "Singapore Computer Society", subtitle: "5 Events" },
         { id: 3, img: '/images/experience/bb.webp', title: "The Boys' Brigade 21st Singapore Company", subtitle: "Feb 2025 to Present" },
     ]
+
+    useEffect(() => {
+        document.title = "Dylan Yeo | Experience";
+    }, []);
 
     return (
         <main className={styles.experience}>
