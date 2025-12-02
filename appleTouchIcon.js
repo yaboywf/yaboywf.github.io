@@ -5,6 +5,12 @@ const TARGET = "https://yaboywf.github.io";
 
 const API = `https://api.microlink.io/?url=${encodeURIComponent(TARGET)}&screenshot=true&meta=false`;
 
+// Paths to save
+const OUTPUT_PATHS = [
+    "./public/images/apple-touch-icon.png",
+    "./public/images/projects/portfolio.png" // <--- add as many paths as you want
+];
+
 https.get(API, res => {
     let data = "";
     res.on("data", chunk => data += chunk);
@@ -14,11 +20,15 @@ https.get(API, res => {
         const screenshotUrl = json.data.screenshot.url;
 
         https.get(screenshotUrl, imgRes => {
-            const file = fs.createWriteStream("./public/images/apple-touch-icon.png");
-            imgRes.pipe(file);
-            file.on("finish", () => {
-                file.close();
-                console.log("✔ Apple touch icon updated!");
+            // Save to all output paths
+            OUTPUT_PATHS.forEach(path => {
+                const file = fs.createWriteStream(path);
+                imgRes.pipe(file);
+
+                file.on("finish", () => {
+                    file.close();
+                    console.log(`✔ Saved: ${path}`);
+                });
             });
         });
     });
