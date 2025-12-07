@@ -62,6 +62,7 @@
 
 .morphing-card {
 	z-index: 3;
+	position: relative;
 	transform-origin: center;
 	position: fixed;
 	transform: translate(0, 0);
