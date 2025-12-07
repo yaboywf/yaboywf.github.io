@@ -1,0 +1,166 @@
+.container {
+    color: #e7e9ec;
+
+    p {
+        margin: 6px 0;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #fff;
+    }
+
+    td {
+        &:first-of-type:not(:has(strong)) {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        &[colspan],
+        &:has(input) {
+            text-align: left !important;
+            font-weight: normal !important;
+        }
+    }
+
+    ol,
+    ul {
+        margin-left: 18px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        &:first-of-type {
+            display: none;
+        }
+
+        &:nth-of-type(2) {
+            tr:nth-of-type(1) td:nth-of-type(3) {
+                text-align: right;
+                font-weight: bold;
+            }
+
+            tr:nth-of-type(4) {
+                display: none;
+            }
+        }
+    }
+
+    div[data-contract]>* {
+        display: none;
+    }
+
+    div[data-contract]>table:nth-of-type(2) {
+        display: table;
+    }
+}
+
+.terminal-container {
+    margin: 30px 150px;
+    position: relative;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    .terminal-header {
+        position: sticky;
+        top: 0;
+        background: grey;
+        color: #fff;
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        z-index: 2;
+        padding: 5px 10px;
+        height: 35px;
+        border-radius: 5px 5px 0 0;
+        pointer-events: all;
+
+        p {
+            cursor: pointer;
+            z-index: 1;
+            width: 130px;
+            text-align: center;
+        }
+
+        > i {
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    .terminal-title {
+        flex-grow: 1;
+        text-align: center;
+        margin-left: -70px;
+    }
+}
+
+.terminal-body {
+    padding: 20px;
+    overflow: hidden;
+    transition: height 0.3s ease, mask-size 0.3s ease;
+    position: relative;
+    mask-size: 100% 0%;
+
+    * {
+        font-family: monospace;
+    }
+
+    a {
+        margin-bottom: 10px;
+        border: 1px solid white;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: white;
+        display: block;
+        width: max-content;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+
+    >div {
+        transition: all 0.3s;
+        position: absolute;
+    }
+
+    input {
+        margin-right: 5px;
+
+        &:disabled {
+            color: #fff;
+            cursor: not-allowed;
+        }
+    }
+
+    &[data-collapse='true'] {
+        mask-size: 100% 100%;
+        mask-image: linear-gradient(to top, transparent, black);
+    }
+}
+
+.terminal-selector {
+    width: 140px;
+    height: 25px;
+    position: absolute;
+    transition: all 0.3s;
+    background: rgb(75, 75, 75);
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+
+    > div {
+        height: max-content;
+    }
+}
