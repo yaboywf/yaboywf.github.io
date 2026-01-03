@@ -1,6 +1,10 @@
+@use "sass:color";
+@use "sass:list";
+
 .container {
     padding: 30px 150px;
-    
+    position: relative;
+
     h1 {
         font-size: 50px;
         text-align: center;
@@ -10,24 +14,14 @@
         gap: 20px;
         width: 100%;
         height: 320px;
-        position: relative;
-        transition: all 0.3s;
+        display: flex;
 
-        > div {
-            border: 2px solid #e7e9ec;
-            position: absolute;
+        >div {
             margin-bottom: 30px;
             border-radius: 10px;
             padding: 20px;
-            background: linear-gradient(to bottom right, rgb(81, 46, 222) 15%, rgb(101, 74, 209) 50%, rgb(81, 46, 222) 85%);
-            color: #e7e9ec;
             width: 300px;
-            height: 250px;
-            top: 50%;
-            transform-origin: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s;
+            height: 280px;
             overflow: auto;
 
             p {
@@ -36,7 +30,8 @@
                 margin-bottom: 10px;
             }
 
-            ul , ol {
+            ul,
+            ol {
                 margin-left: 18px;
             }
 
@@ -44,55 +39,111 @@
                 font-size: 14px;
                 margin-bottom: 5px;
             }
+        }
+    }
 
-            &:nth-of-type(1) {
-                z-index: 3;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+    .curve_container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        mask: linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%);
+        overflow: hidden;
+    }
 
-                p {
-                    font-size: 13px;
-                }
+    .curve {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 200px;
+    }
 
-                p:first-of-type {
-                    font-size: 24px;
-                }
-            }
+    .curve path {
+        filter: drop-shadow(0 0 20px rgba(81, 46, 222, .3));
+        top: 0;
+    }
 
-            &:nth-of-type(2) {
-                rotate: 5deg;
-            }
+    .point {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border-radius: 50%;
+    }
 
-            &:nth-of-type(4) {
-                rotate: -5deg;
-            }
+    .consultation {
+        position: absolute;
+        width: 150px;
+        height: 200px;
+        border-radius: 10px;
+        transform-origin: 50% 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        gap: 5px;
+        cursor: pointer;
+        text-align: center;
+        user-select: none;
+        transition: all 0.3s;
+
+        >p:first-of-type {
+            font-size: 16px;
+            font-weight: bold;
         }
 
-        &:hover {
-            > div {
-                rotate: 0deg;
-
-                &:nth-of-type(1) {
-                    opacity: 0;
-                }
-
-                &:nth-of-type(2) {
-                    left: 150px;
-                }
-
-                &:nth-of-type(4) {
-                    left: calc(100% - 150px);
-                }
-            }
+        >p:nth-of-type(2) {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
-        &[data-active="false"] {
-            rotate: -90deg;
-            transform-origin: bottom center;
-            translate: -100px -100px;
+        &.active {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+        }
+    }
+
+    $colors: (
+        #ffa940,
+        #ff3399,
+        #40a9ff,
+        #73d13d
+    );
+
+@for $i from 0 through 3 {
+    $c: list.nth($colors, $i + 1);
+    $c-dark: color.adjust($c, $lightness: -15%);
+    $c-darker: color.adjust($c, $lightness: -30%);
+
+    .consultation[data-color="#{$i}"] {
+        background: linear-gradient(135deg, $c-dark, $c, $c-dark);
+
+        >p:nth-of-type(2) {
+            color: $c-darker;
+        }
+    }
+
+    .log[data-index="#{$i}"]>div {
+        background: linear-gradient(135deg, $c-dark, $c, $c-dark);
+        color: black;
+    }
+}
+}
+
+@media screen and (width <= 800px) {
+    .container {
+        padding: 5%;
+
+        .log {
+            flex-direction: column;
+            height: auto;
+
+            >div {
+                width: 100%;
+                height: auto;
+                margin-bottom: 0;
+            }
         }
     }
 }

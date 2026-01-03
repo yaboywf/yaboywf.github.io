@@ -1,46 +1,74 @@
+import { useRef, useState, useEffect, Fragment } from "react";
 import styles from "./learninglog.module.scss";
 
-const Log = ({ index, description, date, location }) => {
-    return (
-        <div className={styles.log}>
-            <div>
-                <p>Consultation {index}</p>
-                <p>{date}</p>
-                <p>{location}</p>
-            </div>
-            <div>
-                <p>Key Points Discussed</p>
-                <ul>
-                    {description.key_points_discussed.map((item, i) => (
-                        <li key={i}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-            <div>
-                <p>Tasks for Next Session</p>
-                <ul>
-                    {description.tasks_for_next_session.map((item, i) => (
-                        <li key={i}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-            <div>
-                <p>Reflection</p>
-                <ul>
-                    {description.reflection.map((item, i) => (
-                        <li key={i}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-    );
-};
-
-
 const LearningLog = () => {
+    const svgRef = useRef(null);
+    const pathRef = useRef(null);
+    const [points, setPoints] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(-1);
+    const [viewport, setViewport] = useState(0);
+
+    useEffect(() => {
+        if (!pathRef.current || !svgRef.current) return;
+
+        const path = pathRef.current;
+        const svg = svgRef.current;
+
+        const svgRect = svg.getBoundingClientRect();
+        const containerRect = svg.parentElement.getBoundingClientRect();
+
+        const viewBoxWidth = 1000;
+        const viewBoxHeight = 200;
+
+        const scaleX = svgRect.width / viewBoxWidth;
+        const scaleY = svgRect.height / viewBoxHeight;
+
+        const length = path.getTotalLength();
+        const N = 4;
+
+        const newPoints = Array.from({ length: N }, (_, i) => {
+            const l = ((i + 1) / (N + 1)) * length;
+
+            const p = path.getPointAtLength(l);
+            const pAhead = path.getPointAtLength(
+                Math.min(l + 1, length)
+            );
+
+            // Tangent direction
+            const dx = (pAhead.x - p.x) * scaleX;
+            const dy = (pAhead.y - p.y) * scaleY;
+
+            const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+            return {
+                x:
+                    svgRect.left -
+                    containerRect.left +
+                    p.x * scaleX,
+                y:
+                    svgRect.top -
+                    containerRect.top +
+                    p.y * scaleY,
+                angle,
+            };
+        });
+
+        setPoints(newPoints);
+
+        const onResize = () => {
+            // whatever code you want to re-run
+        };
+    }, [viewport]);
+
+    useEffect(() => {
+        const onResize = () => setViewport(v => v + 1);
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, []);
+
     const data = [
         {
-            "title": "Consultation 1",
+            "title": "Plan",
             "description": {
                 "key_points_discussed": [
                     "My vision for the journey",
@@ -60,10 +88,11 @@ const LearningLog = () => {
                 ]
             },
             "location": "Sprouts Blk 1A",
-            "datetime": "22 OCt 2025 15:30 - 16:30"
+            "date": "22 Oct 2025",
+            "time": "15:30 - 16:30"
         },
         {
-            "title": "Consultation 2",
+            "title": "Perform",
             "description": {
                 "key_points_discussed": [
                     "Reviewed progress and deliverables",
@@ -84,22 +113,96 @@ const LearningLog = () => {
                 ]
             },
             "location": "MS Teams",
-            "datetime": "19 Nov 2025 13:00 - 13:15"
+            "date": "19 Nov 2025",
+            "time": "13:00 - 13:15"
+        },
+        {
+            "title": "Monitor",
+            "date": "12 Dec 2025",
+            "time": "13:00 - 13:15",
+            "location": "MS Teams",
+            "description": {
+                "key_points_discussed": [
+                    "Reviewed my current e-Portfolio structure and initial content",
+                    "LF provided feedback on areas that need improvement",
+                    "Discussed how to better align my e-Portfolio content with the module",
+                    "Identified missing sections and areas that require more detailed explanations and evidence."
+                ],
+                "tasks_for_next_session": [
+                    "Refine and improve the existing e-Portfolio content based on the LF feedback.",
+                    "Update and reorganise sections to improve clarity and flow.",
+                    "Add reflections and supporting evidence (e.g. screenshots, descriptions) to strengthen my e-Portfolio."
+                ],
+                "reflection": [
+                    "I have started building my e-Portfolio early and have a basic structure in place.",
+                    "Some sections lack depth and are not clearly linked to the learning outcomes.",
+                    "I need to be more detailed in my explanations, improve organisation, and ensure my reflections clearly show my learning progress"
+                ]
+            },
+        },
+        {
+            "title": "Reflect",
+            "date": "",
+            "time": "",
+            "location": "",
+            "description": {
+                "key_points_discussed": [],
+                "tasks_for_next_session": [],
+                "reflection": []
+            },
         }
     ];
 
     return (
         <div className={styles.container}>
             <h1>Learning Logs</h1>
-            {data.map((log, index) => (
-                <Log
-                    key={index}
-                    index={index + 1}
-                    description={log.description}
-                    date={log.datetime}
-                    location={log.location}
-                />
-            ))}
+            <div className={styles.curve_container}>
+                <svg ref={svgRef} className={styles.curve} viewBox="0 0 1000 200" preserveAspectRatio="none">
+                    <path ref={pathRef} d="M 0 180 A 600 180 0 0 1 1000 180" fill="none" stroke="black" strokeWidth="2" />
+                </svg>
+                {points.map((p, i) => {
+                    return (
+                        <Fragment key={i}>
+                            <div
+                                className={styles.point}
+                                style={{ left: p.x, top: p.y - 5 }}
+                            />
+                            <div data-color={i % 4} className={`${styles.consultation} ${currentIndex === i ? styles.active : ""}`} style={{ left: p.x - 75, top: p.y - 270, transform: `rotate(${p.angle}deg) ${currentIndex === i ? "scale(1.1)" : ""}` }} onClick={() => setCurrentIndex(i)}>
+                                <p>Consultation {i + 1}</p>
+                                <p>{data[i]?.title}</p>
+                                <p>{data[i]?.date}<br />{data[i]?.time}</p>
+                                <p>{data[i]?.location}</p>
+                            </div>
+                        </Fragment>
+                    )
+                })}
+            </div>
+            {currentIndex >= 0 && <div className={styles.log} data-index={currentIndex}>
+                <div>
+                    <p>Key Points Discussed</p>
+                    <ul>
+                        {data[currentIndex]?.description.key_points_discussed.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+                <div>
+                    <p>Tasks for Next Session</p>
+                    <ul>
+                        {data[currentIndex]?.description.tasks_for_next_session.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+                <div>
+                    <p>Reflection</p>
+                    <ul>
+                        {data[currentIndex]?.description.reflection.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>}
         </div>
     );
 };

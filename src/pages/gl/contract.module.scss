@@ -5,6 +5,14 @@
         margin: 6px 0;
     }
 
+    tr:nth-of-type(odd) td {
+        background: rgb(45, 45, 45);
+
+        &[rowspan] {
+            background: transparent;
+        }
+    }
+
     th,
     td {
         padding: 10px;
@@ -111,7 +119,9 @@
     mask-size: 100% 0%;
 
     * {
-        font-family: monospace;
+        font-family: sans-serif;
+        font-size: 12px;
+        line-height: 1.5;
     }
 
     a {
@@ -163,5 +173,11 @@
 
     > div {
         height: max-content;
+    }
+}
+
+@media screen and (width <= 800px) {
+    .container {
+        margin: 5%;
     }
 }

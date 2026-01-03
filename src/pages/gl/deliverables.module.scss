@@ -51,3 +51,15 @@
 .card-spotlight:focus-within::before {
     opacity: 0.5;
 }
+
+@media screen and (width <= 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 5%;
+
+        h2 {
+            grid-column: span 1;
+            font-size: 40px;
+        }
+    }
+}

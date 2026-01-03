@@ -1,0 +1,40 @@
+.reflections {
+    margin: 0 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #e2e2e2;
+    padding: 20px;
+    border-radius: 10px;
+
+    h2 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    article {
+        line-height: 1.5;
+    }
+
+    img {
+        float: right;
+        margin: 15px;
+        width: 300px;
+        rotate: 15deg;
+    }
+}
+
+@media screen and (width <= 800px) {
+    .reflections {
+        margin: 5%;
+        
+        img {
+            margin: 15px auto;
+            width: 40%;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+}

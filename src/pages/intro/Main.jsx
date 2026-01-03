@@ -2,6 +2,7 @@ import Introduction from "./Intro";
 import SubIntro from "./SubIntro";
 import Techstack from "./Techstack";
 import Certs from "./Certs";
+import Footer from "../Footer";
 import "../../styles/general.scss";
 import "./nav.scss";
 import { useEffect } from "react";
@@ -35,6 +36,8 @@ const Main = () => {
                     <a onClick={() => navigate("/contact")}>Contact Me</a>
                 </div>
             </div>
+
+            <Footer></Footer>
         </main>
     );
 };

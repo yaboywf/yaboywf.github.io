@@ -2,6 +2,7 @@ import Stack from "../../components/Stack";
 import Projects from "./Projects";
 import Particles from "../../components/Particles";
 import BlurText from "../../components/TextEffect";
+import Footer from "../Footer";
 import "../../styles/general.scss";
 import styles from './experience.module.scss'
 import { useNavigate } from "react-router-dom";
@@ -58,6 +59,7 @@ const Main = () => {
             </div>
 
             <Projects></Projects>
+            <Footer></Footer>
         </main>
     );
 };

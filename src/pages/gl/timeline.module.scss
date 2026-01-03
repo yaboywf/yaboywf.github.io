@@ -1,0 +1,258 @@
+.timeline {
+    padding: 0 150px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.content {
+    position: relative;
+    width: 100%;
+
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 50px;
+        pointer-events: none;
+    }
+}
+
+.animate .dot {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.label {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out;
+    scale: .90;
+    background: linear-gradient(to bottom right, rgb(81, 46, 222) 15%, rgb(101, 74, 209) 50%, rgb(81, 46, 222) 85%);
+    animation: fadeIn 0.5s forwards;
+
+    &:hover {
+        scale: 1;
+    }
+}
+
+.morphing-card {
+    z-index: 3;
+    position: relative;
+    transform-origin: center;
+    position: fixed;
+    transform: translate(0, 0);
+    transition: all 0.3s;
+    display: flex;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    gap: 20px;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, rgb(81, 46, 222) 15%, rgb(101, 74, 209) 50%, rgb(81, 46, 222) 85%);
+
+    &:hover {
+        scale: 1;
+    }
+
+    & *:not(h1) {
+        opacity: 0;
+    }
+
+    >div:first-of-type {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 40%;
+    }
+
+    >div:last-of-type {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        img {
+            width: 100%;
+            max-height: 100%;
+            height: max-content;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+    }
+
+    h1 {
+        font-size: 36px !important;
+    }
+
+    span {
+        font-size: 13px;
+        color: rgb(193, 193, 193);
+        font-weight: normal;
+    }
+
+    p {
+        font-weight: normal !important;
+        font-size: 16px !important;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 5px 10px;
+        background: white;
+        color: black;
+        width: max-content;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    &.open {
+        overflow: auto;
+        top: 50% !important;
+        left: 50% !important;
+        translate: -50% -50%;
+        width: 70vw !important;
+        height: 70vh !important;
+
+        & * {
+            opacity: 1;
+        }
+    }
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.2s ease-in-out
+}
+
+.dot {
+    fill: rgba(29, 20, 60, 1);
+    opacity: 0;
+    transform-origin: center bottom;
+    transform-box: fill-box;
+}
+
+.up {
+    animation-name: pop-up;
+}
+
+.down {
+    animation-name: pop-down;
+}
+
+.right {
+    animation-name: pop-right;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes draw-line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes pop-up {
+    from {
+        opacity: 0;
+        height: 8px;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        height: 70px;
+        transform: translateY(-60px);
+    }
+}
+
+@keyframes pop-down {
+    from {
+        opacity: 0;
+        height: 8px;
+        transform: translateY(2px);
+    }
+
+    to {
+        opacity: 1;
+        height: 70px;
+        transform: translateY(2px);
+    }
+}
+
+@keyframes pop-right {
+    from {
+        opacity: 0;
+        transform: translateX(2px);
+        width: 8px;
+    }
+
+    to {
+        opacity: 1;
+        width: 70px;
+        transform: translateX(2px);
+    }
+}
+
+@media screen and (width <=1200px) {
+    .timeline .content {
+        overflow: auto;
+    }
+}
+
+@media screen and (width <=800px) {
+    .timeline {
+        padding: 5%;
+
+        .content>p {
+            font-size: 40px;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
