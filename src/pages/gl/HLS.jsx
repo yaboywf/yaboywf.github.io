@@ -7,7 +7,7 @@ export default function HlsPlayer({
     muted = false,
     poster,
     className,
-    forceMSE = false, // 👈 NEW
+    forceMSE = true,
 }) {
     const videoRef = useRef(null);
 
@@ -22,7 +22,7 @@ export default function HlsPlayer({
             video.canPlayType("application/vnd.apple.mpegurl") ||
             video.canPlayType("application/x-mpegURL");
 
-        // ✅ Native HLS ONLY if not forcing MSE
+        // Native HLS
         if (canPlayNative && !forceMSE) {
             video.src = src;
             return () => {
@@ -31,23 +31,14 @@ export default function HlsPlayer({
             };
         }
 
-        // ✅ MSE path (this creates blob:)
+        // MSE via hls.js
         (async () => {
-            const mod = await import("hls.js");
-            if (cancelled) return;
+            const { default: Hls } = await import("hls.js");
+            if (cancelled || !Hls.isSupported()) return;
 
-            const Hls = mod.default;
-            if (!Hls.isSupported()) {
-                console.warn("HLS not supported via MSE.");
-                return;
-            }
-
-            hls = new Hls({
-                enableWorker: true,
-            });
+            hls = new Hls({ enableWorker: true });
 
             hls.attachMedia(video);
-
             hls.on(Hls.Events.MEDIA_ATTACHED, () => {
                 hls.loadSource(src);
             });
@@ -55,9 +46,10 @@ export default function HlsPlayer({
 
         return () => {
             cancelled = true;
-            if (hls) hls.destroy();
+            hls?.destroy();
         };
     }, [src, forceMSE]);
+
 
     return (
         <video

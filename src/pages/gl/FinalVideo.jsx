@@ -24,7 +24,7 @@ const Video = () => {
     return (
         <div className={styles.finalvideo} ref={wrapper}>
             <h2>Final Video</h2>
-            <Hls src="/gl/final/output.m3u8"></Hls>
+            <Hls src="/gl/final/output.m3u8" forceMSE></Hls>
             <div>
                 <div className={styles.feedback}>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ratione qui perferendis minus itaque labore, libero amet minima similique a illum iure possimus doloremque consequatur iusto. Repellat quas soluta tenetur!</p>

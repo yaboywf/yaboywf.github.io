@@ -1,15 +1,18 @@
+import HlsPlayer from "./HLS";
 import styles from "./timeline.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 const POINTS = [0.05, 0.15, 0.25, 0.35, 0.5, 0.7, 0.9];
 const data = [
     {
-        title: "Week 2",
-        description: "Started learning about Git and GitHub.",
+        title: "Week 5",
+        video: "/combined/output.m3u8",
+        description: "Practised switching between chords smoothly while maintaining a steady tempo. The focus was on improving finger placement, reducing pauses between chord changes, and keeping consistent timing throughout the piece.\nThe demo showcases me playing Walleman, demonstrating my progress in chord transitions and overall rhythmic control.",
     },
     {
-        title: "Week 3",
-        description: "Explored basic HTML and CSS concepts.",
+        title: "Week 6",
+        video: "/intro/output.m3u8",
+        description: "Practised the intro of ‘Someone You Loved’ using both hands, focusing on coordinating the right-hand melody with left-hand chords while maintaining steady timing.",
     }
 ]
 
@@ -56,12 +59,15 @@ const MorphingCard = ({ expanded, onFullyClose, registerClose }) => {
         >
             <div>
                 <h1>{data.title}</h1>
-                <span>hi</span>
-                <p>{data.description}</p>
-                {data.link && <a href={data.link} target="_blank" rel="noopener noreferrer">View Project</a>}
+                {data.description.split("\n").map((line, index) => (
+                    <Fragment key={index}>
+                        <p>{line}</p>
+                        <br />
+                    </Fragment>
+                ))}
             </div>
             <div>
-                <img src={data.image ? `images/projects/${data.image}` : null} alt="" />
+                <HlsPlayer src={`/gl/${data.video}`} autoPlay />
             </div>
         </div>
     );
