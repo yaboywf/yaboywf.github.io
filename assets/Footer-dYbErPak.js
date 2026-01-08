@@ -1,1 +1,0 @@
-import{a as o}from"./vendor-BQQ7LqxH.js";const e="_footer_1bvi8_1",r={footer:e},s=()=>o("footer",{className:r.footer,children:o("p",{children:"© 2025 Dylan Yeo. All rights reserved."})});export{s as F};
