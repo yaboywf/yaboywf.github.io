@@ -177,32 +177,34 @@ const LearningLog = () => {
                     )
                 })}
             </div>
-            {currentIndex >= 0 && <div className={styles.log} data-index={currentIndex}>
-                <div>
-                    <p>Key Points Discussed</p>
-                    <ul>
-                        {data[currentIndex]?.description.key_points_discussed.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    <p>Tasks for Next Session</p>
-                    <ul>
-                        {data[currentIndex]?.description.tasks_for_next_session.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    <p>Reflection</p>
-                    <ul>
-                        {data[currentIndex]?.description.reflection.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-            </div>}
+            <div className={styles.log} data-index={currentIndex} key={currentIndex}>
+                {currentIndex > -1 && <>
+                    <div className={styles.active}>
+                        <p>Key Points Discussed</p>
+                        <ul>
+                            {data[currentIndex]?.description.key_points_discussed.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className={styles.active}>
+                        <p>Tasks for Next Session</p>
+                        <ul>
+                            {data[currentIndex]?.description.tasks_for_next_session.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className={styles.active}>
+                        <p>Reflection</p>
+                        <ul>
+                            {data[currentIndex]?.description.reflection.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </>}
+            </div>
         </div>
     );
 };
