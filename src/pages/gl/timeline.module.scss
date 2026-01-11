@@ -53,6 +53,10 @@
     }
 }
 
+.hidden {
+    opacity: 0 !important;
+}
+
 .morphing-card {
     z-index: 3;
     position: relative;

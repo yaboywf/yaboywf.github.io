@@ -125,6 +125,7 @@
 @for $i from 0 through 3 {
     $c: list.nth($colors, $i + 1);
     $c-dark: color.adjust($c, $lightness: -15%);
+    $c-darken: color.adjust($c, $lightness: -20%);
     $c-darker: color.adjust($c, $lightness: -30%);
 
     .consultation[data-color="#{$i}"] {
@@ -138,6 +139,14 @@
     .log[data-index="#{$i}"]>div {
         background: linear-gradient(135deg, $c-dark, $c, $c-dark);
         color: black;
+
+        &::-webkit-scrollbar  {
+            background: $c;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $c-darken;
+        }
     }
 }
 }

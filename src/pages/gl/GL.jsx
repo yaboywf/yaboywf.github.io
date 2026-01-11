@@ -1,4 +1,5 @@
 import Introduction from "../intro/Intro";
+import SubIntro1 from "../intro/SubIntro";
 import SubIntro from "./Description";
 import Deliverables from "./Deliverables";
 import DocxViewer from "./Contract";
@@ -19,6 +20,7 @@ const Main = () => {
     return (
         <main>
             <Introduction></Introduction>
+            <SubIntro1></SubIntro1>
             <SubIntro></SubIntro>
             <Deliverables></Deliverables>
             <Timeline></Timeline>

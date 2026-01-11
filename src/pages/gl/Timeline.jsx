@@ -13,6 +13,26 @@ const data = [
         title: "Week 6",
         video: "/intro/output.m3u8",
         description: "Practised the intro of ‘Someone You Loved’ using both hands, focusing on coordinating the right-hand melody with left-hand chords while maintaining steady timing.",
+    },
+    {
+        title: "Week 8",
+        video: "/verse1/output.m3u8",
+        description: "I am currently learning how to play the keyboard, focusing on Verse 1 of Someone You Loved. This practice helps me improve my finger coordination, timing, and familiarity with chord transitions. Through consistent practice, I am gradually building confidence and musical expression on the keyboard.",
+    },
+    {
+        title: "Week 10",
+        video: "/chorus/output.m3u8",
+        description: "I am currently practising the chorus of Someone You Loved, focusing on smoother transitions and maintaining a steady tempo. This section requires stronger hand coordination and control, helping me improve both technique and expression. With continued practice, I am becoming more comfortable playing the melody confidently.",
+    },
+    {
+        title: "Week 11",
+        video: "/half/output.m3u8",
+        description: "I have completed learning the first half of Someone You Loved through independent practice. By managing my own learning pace and identifying challenging sections, I developed greater learning independence and self-discipline. This process strengthened my confidence in picking up new musical pieces on my own.",
+    },
+    {
+        title: "Week 12",
+        video: "/full1/output.m3u8",
+        description: "I have completed learning the full song Someone You Loved through independent practice. Although my playing is still slow and contains mistakes, the process has helped me develop learning independence by identifying weaknesses and working on them progressively. With continued self-directed practice, I aim to improve accuracy, tempo, and overall confidence.",
     }
 ]
 
@@ -119,7 +139,7 @@ const Timeline = () => {
         observer.observe(wrapper);
 
         return () => observer.disconnect();
-    }, []);
+    }, [POINTS, data]);
 
     const showLabel = (i) => {
         setShownLabels(prev => ({ ...prev, [i]: true }));
