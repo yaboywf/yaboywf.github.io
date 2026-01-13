@@ -2,37 +2,60 @@ import HlsPlayer from "./HLS";
 import styles from "./timeline.module.scss";
 import { Fragment, useEffect, useRef, useState } from "react";
 
-const POINTS = [0.05, 0.15, 0.25, 0.35, 0.5, 0.7, 0.9];
 const data = [
+    {
+        title: "Week 2 & 3",
+        video: "/note_learning/output.m3u8",
+        description: "Focused on note recognition on the keyboard by learning the names and positions of individual notes, building a foundation for reading and playing music accurately.",
+        position: 0.05
+    },
+    {
+        title: "Week 4",
+        video: "/chord_learning/output.m3u8",
+        description: "Focused on learning basic chord shapes and accompaniment patterns, ensuring consistent rhythm and smooth transitions between chords. Emphasis was placed on maintaining steady timing to support the melody and improve overall harmony.",
+        position: 0.15
+    },
     {
         title: "Week 5",
         video: "/combined/output.m3u8",
         description: "Practised switching between chords smoothly while maintaining a steady tempo. The focus was on improving finger placement, reducing pauses between chord changes, and keeping consistent timing throughout the piece.\nThe demo showcases me playing Walleman, demonstrating my progress in chord transitions and overall rhythmic control.",
+        position: 0.25
     },
     {
         title: "Week 6",
         video: "/intro/output.m3u8",
         description: "Practised the intro of ‘Someone You Loved’ using both hands, focusing on coordinating the right-hand melody with left-hand chords while maintaining steady timing.",
+        position: 0.35
     },
     {
         title: "Week 8",
         video: "/verse1/output.m3u8",
         description: "I am currently learning how to play the keyboard, focusing on Verse 1 of Someone You Loved. This practice helps me improve my finger coordination, timing, and familiarity with chord transitions. Through consistent practice, I am gradually building confidence and musical expression on the keyboard.",
+        position: 0.51
     },
     {
         title: "Week 10",
         video: "/chorus/output.m3u8",
         description: "I am currently practising the chorus of Someone You Loved, focusing on smoother transitions and maintaining a steady tempo. This section requires stronger hand coordination and control, helping me improve both technique and expression. With continued practice, I am becoming more comfortable playing the melody confidently.",
+        position: 0.65
     },
     {
         title: "Week 11",
         video: "/half/output.m3u8",
         description: "I have completed learning the first half of Someone You Loved through independent practice. By managing my own learning pace and identifying challenging sections, I developed greater learning independence and self-discipline. This process strengthened my confidence in picking up new musical pieces on my own.",
+        position: 0.75
     },
     {
         title: "Week 12",
         video: "/full1/output.m3u8",
         description: "I have completed learning the full song Someone You Loved through independent practice. Although my playing is still slow and contains mistakes, the process has helped me develop learning independence by identifying weaknesses and working on them progressively. With continued self-directed practice, I aim to improve accuracy, tempo, and overall confidence.",
+        position: 0.85
+    },
+    {
+        title: "Week 13",
+        video: "/full2/output.m3u8",
+        description: "Built on my previous practice by refining difficult sections of Someone You Loved. Through self-evaluation and repeated practice, I improved accuracy and control, demonstrating increased learning independence and confidence.",
+        position: 0.95
     }
 ]
 
@@ -112,15 +135,20 @@ const Timeline = () => {
         path.style.strokeDasharray = length;
         path.style.strokeDashoffset = length;
 
-        const calculatedDots = POINTS.map((p, i) => {
-            const point = path.getPointAtLength(length * p);
+        const calculatedDots = data.map((item, i) => {
+            if (typeof item.position !== "number") return null;
+
+            const point = path.getPointAtLength(length * item.position);
+
             return {
                 x: point.x,
                 y: point.y,
-                direction: p < 0.5 ? -1 : (p < 0.6 ? 0 : 1),
-                label: `Week ${i + 2}`
+                direction:
+                    item.position < 0.4 ? -1 :
+                        item.position < 0.6 ? 0 : 1,
+                label: item.title
             };
-        });
+        }).filter(Boolean);
 
         setDots(calculatedDots);
 
@@ -139,7 +167,7 @@ const Timeline = () => {
         observer.observe(wrapper);
 
         return () => observer.disconnect();
-    }, [POINTS, data]);
+    }, [data]);
 
     const showLabel = (i) => {
         setShownLabels(prev => ({ ...prev, [i]: true }));
@@ -165,10 +193,10 @@ const Timeline = () => {
         <div ref={wrapperRef} className={styles.timeline}>
             <div className={styles.content}>
                 <p>The Journey</p>
-                <svg width="1000" height="1100" viewBox="0 0 800 300">
+                <svg width="1000" height="800" viewBox="0 0 800 170">
                     <path
                         ref={pathRef}
-                        d="M 5 0 H 600 A 30 30 0 0 1 630 30 V 300 A 30 30 0 0 1 600 330 H 5"
+                        d="M 5 0 H 600 A 30 30 0 0 1 630 30 V 160 A 30 30 0 0 1 600 190 H 5"
                         fill="none"
                         stroke="rgba(29, 20, 60, 1)"
                         strokeWidth="6"

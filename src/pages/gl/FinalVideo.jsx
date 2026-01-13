@@ -27,15 +27,9 @@ const Video = () => {
             <Hls src="/gl/final/output.m3u8" forceMSE></Hls>
             <div>
                 <div className={styles.feedback}>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ratione qui perferendis minus itaque labore, libero amet minima similique a illum iure possimus doloremque consequatur iusto. Repellat quas soluta tenetur!</p>
+                    <p>For a first-time learner, this was a strong and impressive performance with good technique, finger control, and hand–eye coordination. The overall melody and harmony were well captured, and memorising the entire piece is especially commendable for a beginner. While most notes were accurate, some rests and pauses were not fully observed, affecting the flow slightly. Focusing more on timing and practising with the score will help improve this further.</p>
                     <p>David Fong</p>
-                    <p>Grade</p>
-                </div>
-                <hr />
-                <div className={styles.feedback}>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ratione qui perferendis minus itaque labore, libero amet minima similique a illum iure possimus doloremque consequatur iusto. Repellat quas soluta tenetur!</p>
-                    <p>David Fong</p>
-                    <p>Grade</p>
+                    <p>Grade 6 Distinction</p>
                 </div>
             </div>
         </div>
