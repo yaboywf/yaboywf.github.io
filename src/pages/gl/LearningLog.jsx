@@ -142,13 +142,27 @@ const LearningLog = () => {
         },
         {
             "title": "Reflect",
-            "date": "",
-            "time": "",
-            "location": "",
+            "date": "14 Jan 2026",
+            "time": "13:30 - 14:00",
+            "location": "MS Teams",
             "description": {
-                "key_points_discussed": [],
-                "tasks_for_next_session": [],
-                "reflection": []
+                "key_points_discussed": [
+                    "Interview is based on 4 marking descriptors.",
+                    "Answers must show reflection and self-directed learning, not just yes/no",
+                    "Focus on how the learning process transformed me.",
+                    "Presentation should be clear, engaging, and under 10 minutes",
+                    "Link reflections to future studies, work, and life."
+                ],
+                "tasks_for_next_session": [
+                    "Final e-portfolio link.",
+                    "Reflection interview submission (template).",
+                    "Short portfolio walkthrough focusing on Guided Learning reflection."
+                ],
+                "reflection": [
+                    "Most of e-portfolio is done, though certain content may still need to be edited.",
+                    "During the mock assessment, my presentation delivery was not fluent and lacked structure.",
+                    "Practice clearer reflection and improve oral presentation confidence."
+                ]
             },
         }
     ];
