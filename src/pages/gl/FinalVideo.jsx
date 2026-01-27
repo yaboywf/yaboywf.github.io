@@ -31,6 +31,7 @@ const Video = () => {
                     <p>David Fong</p>
                     <p>Grade 6 Distinction</p>
                 </div>
+                <a style={{ fontSize: 12, marginTop: "auto" }} href="https://www.youtube.com/watch?v=8B9P5aGAgwc&list=RD8B9P5aGAgwc">Music reference source</a>
             </div>
         </div>
     );
