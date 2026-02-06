@@ -110,7 +110,7 @@ const MorphingCard = ({ expanded, onFullyClose, registerClose }) => {
                 ))}
             </div>
             <div>
-                <HlsPlayer src={`/gl/${data.video}`} autoPlay />
+                <HlsPlayer src={`/gl/${data.video}`} />
             </div>
         </div>
     );
