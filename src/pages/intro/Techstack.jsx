@@ -7,20 +7,25 @@ const Techstack = () => {
     const text = `Tech Stack Overview
 -------------------------------------------------------
 
-[ Web Development ]             [ Backend Development ]
-- HTML                          - Node.js (Express)
-- CSS / SCSS                    - Django
-- JavaScript                    - Python Flask
-- React.js
+[ WEB DEVELOPMENT ]             [ DEVOPS ]
+- HTML                          - Git/GitHub
+- CSS / SCSS                    - Github Actions
+- JavaScript/TypeScript         - Jenkins
+- React.js                      - Playwright / Cypress
+- Next.js                       - Cloud (AWS / GCP) 
+- Node.js (Express)             - Docker
+- Python (Flask)                - SuperTest
+- Django                        - Minikube / Kubernetes
 
-[ Programming Languages ]       [ Databases ]
+[ PROGRAMMING LANGUAGES ]       [ DATABASES ]
 - Python                        - MySQL
-- JavaScript                    - PostgreSQL
-- Dart                          - MongoDB
-                                - SQLite
-                                - Firebird SQL
+- Dart                          - PostgreSQL
+- Javascript                    - MongoDB
+- TypeScript                    - SQLite
+- MicroPython                   - Firebird SQL
+                                - Firebase
 
-[ Mobile Development ]          [ Game Development ]
+[ MOBILE DEVELOPMENT ]          [ GAME DEVELOPMENT ]
 - Flutter                       - Pygame
 
 -------------------------------------------------------
