@@ -29,7 +29,7 @@ const Techstack = () => {
 - Flutter                       - Pygame
 
 -------------------------------------------------------
-End of file
+END OF FILE
     `;
 
     return (
