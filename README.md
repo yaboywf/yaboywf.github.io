@@ -8,20 +8,21 @@ I have a strong passion for coding and aspire to build a career in the IT field.
 3. CSS
 4. SCSS
 5. JavaScript
-6. Python
-7. C++
-8. Javascript Express
-9. Python Flask
-10. Pygame
-11. MySQL
-12. SQLite
-13. Firebird SQL
-14. Dart
-15. Flutter
-16. Figma
-17. KNIME
+6. TypeScript
+7. Python
+8. C++
+9. Javascript Express
+10. Python Flask
+11. Pygame
+12. MySQL
+13. SQLite
+14. Firebird SQL
+15. Dart
+16. Flutter
+17. Figma
+18. KNIME
 
 <b>Learn more about me by visiting my website</b>
 
 # Last Updated
-Last updated: 24/09/2025
+Last updated: 01/03/2026
