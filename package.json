@@ -6,26 +6,21 @@
   "homepage": "https://yaboywf.github.io/yaboywf.github.io",
   "scripts": {
     "dev": "vite",
-    "update-touch-icon": "node appleTouchIcon.js",
-    "build": "npm run update-touch-icon && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@firebase/app": "^0.14.6",
-    "@firebase/auth": "^1.12.0",
     "hls.js": "^1.6.15",
     "mammoth": "^1.11.0",
-    "motion": "^12.24.10",
     "ogl": "^1.0.11",
     "preact": "^10.28.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-router-dom": "^7.12.0",
     "react-tiny-link": "^3.6.1",
-    "redaxios": "^0.5.1",
     "sass": "^1.97.2"
   },
   "devDependencies": {
